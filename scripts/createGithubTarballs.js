@@ -1,23 +1,28 @@
 const path = require("path");
-const { readdir, readFile, writeFile, lstat } = require("fs/promises");
+const { execSync } = require("child_process");
+const { readdir, readFile, writeFile, lstat, rename } = require("fs/promises");
 const { argv } = require("process");
 
-const releaseName = argv[2];
-if (!releaseName) throw Error("provide release name as first argument");
+(async () => {
+  const releaseName = argv[2];
+  if (!releaseName) throw Error("provide release name as first argument");
 
-if (releaseName === "undo") {
-  toNormal();
-} else {
-  toGithub();
-}
+  await dependenciesToGithub(releaseName);
+  execSync("npm pack --workspaces --pack-destination tarballs");
+  await renameTarballs();
+  await dependenciesToNormal();
 
-async function toGithub() {
+  console.log("\ncreated tarballs for the release", releaseName);
+  console.log("Use the following command to create a release with the gh CLI:");
+  console.log(`gh release create ${releaseName} ./tarballs/*`);
+})();
+
+async function dependenciesToGithub(releaseName) {
   const tarballUrlPrefix =
     "https://github.com/mitschabaude/webassemblyjs/releases/download/" +
     releaseName +
     "/";
   const rootDir = await findWorkspaceDir();
-  // const { version } = await readJson(rootDir, "lerna.json");
   const packages = await getWorkspacePackages(rootDir, "packages");
 
   for (const pkg of Object.values(packages)) {
@@ -36,11 +41,9 @@ async function toGithub() {
     }
     await writeJson(pkg.json, pkg.dir, "package.json");
   }
-
-  console.log(Object.values(packages)[0]);
 }
 
-async function toNormal() {
+async function dependenciesToNormal() {
   const rootDir = await findWorkspaceDir();
   const { version } = await readJson(rootDir, "lerna.json");
   const packages = await getWorkspacePackages(rootDir, "packages");
@@ -56,12 +59,26 @@ async function toNormal() {
     }
     await writeJson(pkg.json, pkg.dir, "package.json");
   }
-
-  console.log(Object.values(packages)[0]);
 }
 
-function packageNameToTarName(name, version) {
-  return name.replace(/@/g, "").replace(/\//g, "-") + "-" + version + ".tgz";
+async function renameTarballs() {
+  const rootDir = await findWorkspaceDir();
+  const { version } = await readJson(rootDir, "lerna.json");
+  const tarballDir = path.resolve(rootDir, "tarballs");
+  const tarballs = await readdir(tarballDir);
+
+  for (const tarball of tarballs) {
+    const newTarball = tarball.replace(`-${version}.tgz`, ".tgz");
+    await rename(
+      path.resolve(tarballDir, tarball),
+      path.resolve(tarballDir, newTarball)
+    );
+  }
+}
+
+function packageNameToTarName(name) {
+  // return name.replace(/@/g, "").replace(/\//g, "-") + "-" + version + ".tgz";
+  return name.replace(/@/g, "").replace(/\//g, "-") + ".tgz";
 }
 
 async function getWorkspacePackages(...pathToPackages) {

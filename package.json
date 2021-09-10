@@ -3,7 +3,7 @@
   "scripts": {
     "test": "make test",
     "build": "make build",
-    "pack": "npm pack --workspaces --pack-destination tarballs"
+    "pack": "node scripts/createGithubTarballs.js"
   },
   "author": "Sven Sauleau",
   "license": "MIT",
