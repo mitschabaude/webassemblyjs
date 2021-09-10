@@ -1842,6 +1842,46 @@
   dependencies:
     "@types/yargs-parser" "*"
 
+"@webassemblyjs/ast@https://github.com/mitschabaude/webassemblyjs/releases/latest/download/webassemblyjs-ast-1.11.1.tgz":
+  version "1.11.1"
+  uid "759a075f3a6b09bf4b5e8ae98d37cff4ae6fbdd8"
+  resolved "https://github.com/mitschabaude/webassemblyjs/releases/latest/download/webassemblyjs-ast-1.11.1.tgz#759a075f3a6b09bf4b5e8ae98d37cff4ae6fbdd8"
+  dependencies:
+    "@webassemblyjs/helper-numbers" "1.11.1"
+    "@webassemblyjs/helper-wasm-bytecode" "1.11.1"
+
+"@webassemblyjs/helper-wasm-bytecode@https://github.com/mitschabaude/webassemblyjs/releases/latest/download/webassemblyjs-helper-wasm-bytecode-1.11.1.tgz":
+  version "1.11.1"
+  uid "05c5461deaa803ca9c640557156f3b20beebe549"
+  resolved "https://github.com/mitschabaude/webassemblyjs/releases/latest/download/webassemblyjs-helper-wasm-bytecode-1.11.1.tgz#05c5461deaa803ca9c640557156f3b20beebe549"
+
+"@webassemblyjs/leb128@https://github.com/mitschabaude/webassemblyjs/releases/latest/download/webassemblyjs-leb128-1.11.1.tgz":
+  version "1.11.1"
+  uid da6407218b62fc5e17cddbffad1cb559af20198f
+  resolved "https://github.com/mitschabaude/webassemblyjs/releases/latest/download/webassemblyjs-leb128-1.11.1.tgz#da6407218b62fc5e17cddbffad1cb559af20198f"
+  dependencies:
+    "@xtuc/long" "4.2.2"
+
+"@webassemblyjs/wasm-parser@https://github.com/mitschabaude/webassemblyjs/releases/latest/download/webassemblyjs-wasm-parser-1.11.1.tgz":
+  version "1.11.1"
+  uid "5ddface0481a4741b8bd1f2e4c1b836a06542402"
+  resolved "https://github.com/mitschabaude/webassemblyjs/releases/latest/download/webassemblyjs-wasm-parser-1.11.1.tgz#5ddface0481a4741b8bd1f2e4c1b836a06542402"
+  dependencies:
+    "@webassemblyjs/ast" "1.11.1"
+    "@webassemblyjs/helper-api-error" "1.11.1"
+    "@webassemblyjs/helper-wasm-bytecode" "1.11.1"
+    "@webassemblyjs/ieee754" "1.11.1"
+    "@webassemblyjs/leb128" "1.11.1"
+    "@webassemblyjs/utf8" "1.11.1"
+
+"@webassemblyjs/wast-printer@https://github.com/mitschabaude/webassemblyjs/releases/latest/download/webassemblyjs-wast-printer-1.11.1.tgz":
+  version "1.11.1"
+  uid "92450011d01198848760f5765a2033197ee822d6"
+  resolved "https://github.com/mitschabaude/webassemblyjs/releases/latest/download/webassemblyjs-wast-printer-1.11.1.tgz#92450011d01198848760f5765a2033197ee822d6"
+  dependencies:
+    "@webassemblyjs/ast" "1.11.1"
+    "@xtuc/long" "4.2.2"
+
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@xtuc/ieee754/-/ieee754-1.2.0.tgz#eef014a3145ae477a1cbc00cd1e552336dceb790"

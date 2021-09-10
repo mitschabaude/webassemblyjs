@@ -11,7 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "@webassemblyjs/wast-parser": "1.11.1",
-    "@webassemblyjs/wast-printer": "1.11.1"
+    "@webassemblyjs/wast-printer": "https://github.com/mitschabaude/webassemblyjs/releases/latest/download/webassemblyjs-wast-printer-1.11.1.tgz"
   },
   "repository": {
     "type": "git",

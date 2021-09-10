@@ -17,11 +17,11 @@
   "author": "Sven Sauleau",
   "license": "MIT",
   "dependencies": {
-    "@webassemblyjs/ast": "1.11.1",
+    "@webassemblyjs/ast": "https://github.com/mitschabaude/webassemblyjs/releases/latest/download/webassemblyjs-ast-1.11.1.tgz",
     "@webassemblyjs/helper-api-error": "1.11.1",
-    "@webassemblyjs/helper-wasm-bytecode": "1.11.1",
+    "@webassemblyjs/helper-wasm-bytecode": "https://github.com/mitschabaude/webassemblyjs/releases/latest/download/webassemblyjs-helper-wasm-bytecode-1.11.1.tgz",
     "@webassemblyjs/ieee754": "1.11.1",
-    "@webassemblyjs/leb128": "1.11.1",
+    "@webassemblyjs/leb128": "https://github.com/mitschabaude/webassemblyjs/releases/latest/download/webassemblyjs-leb128-1.11.1.tgz",
     "@webassemblyjs/utf8": "1.11.1"
   },
   "repository": {
@@ -34,7 +34,6 @@
   "devDependencies": {
     "@webassemblyjs/helper-buffer": "1.11.1",
     "@webassemblyjs/helper-test-framework": "1.11.1",
-    "@webassemblyjs/helper-wasm-bytecode": "1.7.7",
     "@webassemblyjs/wasm-gen": "1.11.1",
     "@webassemblyjs/wast-parser": "1.11.1",
     "mamacro": "^0.0.7",

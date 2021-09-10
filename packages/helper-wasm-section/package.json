@@ -17,9 +17,9 @@
   "author": "Sven Sauleau",
   "license": "MIT",
   "dependencies": {
-    "@webassemblyjs/ast": "1.11.1",
+    "@webassemblyjs/ast": "https://github.com/mitschabaude/webassemblyjs/releases/latest/download/webassemblyjs-ast-1.11.1.tgz",
     "@webassemblyjs/helper-buffer": "1.11.1",
-    "@webassemblyjs/helper-wasm-bytecode": "1.11.1",
+    "@webassemblyjs/helper-wasm-bytecode": "https://github.com/mitschabaude/webassemblyjs/releases/latest/download/webassemblyjs-helper-wasm-bytecode-1.11.1.tgz",
     "@webassemblyjs/wasm-gen": "1.11.1"
   },
   "devDependencies": {

@@ -18,7 +18,7 @@
   "author": "Sven Sauleau",
   "license": "MIT",
   "dependencies": {
-    "@webassemblyjs/ast": "1.11.1",
+    "@webassemblyjs/ast": "https://github.com/mitschabaude/webassemblyjs/releases/latest/download/webassemblyjs-ast-1.11.1.tgz",
     "@webassemblyjs/floating-point-hex-parser": "1.11.1",
     "@webassemblyjs/helper-api-error": "1.11.1",
     "@webassemblyjs/helper-code-frame": "1.11.1",

@@ -2,7 +2,8 @@
   "private": true,
   "scripts": {
     "test": "make test",
-    "build": "make build"
+    "build": "make build",
+    "pack": "npm pack --workspaces --pack-destination tarballs"
   },
   "author": "Sven Sauleau",
   "license": "MIT",
