@@ -14,7 +14,7 @@
   "author": "Sven Sauleau",
   "license": "MIT",
   "dependencies": {
-    "@webassemblyjs/ast": "https://github.com/mitschabaude/webassemblyjs/releases/latest/download/webassemblyjs-ast-1.11.1.tgz"
+    "@webassemblyjs/ast": "1.11.1"
   },
   "devDependencies": {
     "@webassemblyjs/helper-test-framework": "1.11.1",

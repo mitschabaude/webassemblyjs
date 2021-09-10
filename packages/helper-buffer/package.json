@@ -17,7 +17,7 @@
   "author": "Sven Sauleau",
   "license": "MIT",
   "devDependencies": {
-    "@webassemblyjs/wasm-parser": "https://github.com/mitschabaude/webassemblyjs/releases/latest/download/webassemblyjs-wasm-parser-1.11.1.tgz",
+    "@webassemblyjs/wasm-parser": "1.11.1",
     "jest-diff": "^24.0.0"
   }
 }

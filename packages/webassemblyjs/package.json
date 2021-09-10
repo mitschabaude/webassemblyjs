@@ -19,10 +19,10 @@
   "author": "Sven Sauleau",
   "license": "MIT",
   "dependencies": {
-    "@webassemblyjs/ast": "https://github.com/mitschabaude/webassemblyjs/releases/latest/download/webassemblyjs-ast-1.11.1.tgz",
+    "@webassemblyjs/ast": "1.11.1",
     "@webassemblyjs/helper-compiler": "1.11.1",
     "@webassemblyjs/validation": "1.11.1",
-    "@webassemblyjs/wasm-parser": "https://github.com/mitschabaude/webassemblyjs/releases/latest/download/webassemblyjs-wasm-parser-1.11.1.tgz",
+    "@webassemblyjs/wasm-parser": "1.11.1",
     "@webassemblyjs/wast-parser": "1.11.1",
     "@xtuc/long": "4.2.2"
   },

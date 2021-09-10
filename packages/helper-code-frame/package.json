@@ -14,9 +14,9 @@
   "author": "Sven Sauleau",
   "license": "MIT",
   "dependencies": {
-    "@webassemblyjs/wast-printer": "https://github.com/mitschabaude/webassemblyjs/releases/latest/download/webassemblyjs-wast-printer-1.11.1.tgz"
+    "@webassemblyjs/wast-printer": "1.11.1"
   },
   "devDependencies": {
-    "@webassemblyjs/ast": "https://github.com/mitschabaude/webassemblyjs/releases/latest/download/webassemblyjs-ast-1.11.1.tgz"
+    "@webassemblyjs/ast": "1.11.1"
   }
 }
