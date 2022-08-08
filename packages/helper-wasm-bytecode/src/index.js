@@ -320,6 +320,7 @@ const symbolsByByte = {
 
   // bulk memory
   0xfc0a: createSymbol("memory.copy"),
+  0xfc0b: createSymbol("memory.fill"),
 
   // Atomic Memory Instructions
   0xfe00: createSymbol("memory.atomic.notify", 1),

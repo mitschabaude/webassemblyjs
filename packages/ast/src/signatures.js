@@ -74,6 +74,7 @@ const memoryInstructions = {
   current_memory: sign([], []),
   grow_memory: sign([], []),
   "memory.copy": sign([u32, u32, u32], []),
+  "memory.fill": sign([u32, u32, u32], []),
 };
 
 const numericInstructions = {

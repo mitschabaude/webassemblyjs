@@ -1043,16 +1043,18 @@ export function decode(ab: ArrayBuffer, opts: DecoderOpts): Program {
          * memory.copy
          */
         if (instruction.name === "memory.copy") {
-          let indexU32 = readU32();
-          let index = indexU32.value;
-          eatBytes(indexU32.nextIndex);
-          if (index !== 0) {
+          const zero1 = readByte();
+          eatBytes(1);
+          const zero2 = readByte();
+          eatBytes(1);
+          if (zero1 !== 0 || zero2 !== 0) {
             throw new Error("zero flag expected");
           }
-          indexU32 = readU32();
-          index = indexU32.value;
-          eatBytes(indexU32.nextIndex);
-          if (index !== 0) {
+        }
+        if (instruction.name === "memory.fill") {
+          const zero = readByte();
+          eatBytes(1);
+          if (zero !== 0) {
             throw new Error("zero flag expected");
           }
         }
