@@ -73,6 +73,7 @@ const memoryInstructions = {
   "i64.store32": sign([u32, u32], []),
   current_memory: sign([], []),
   grow_memory: sign([], []),
+  "memory.copy": sign([u32, u32, u32], []),
 };
 
 const numericInstructions = {

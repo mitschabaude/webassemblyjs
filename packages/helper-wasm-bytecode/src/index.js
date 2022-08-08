@@ -318,6 +318,9 @@ const symbolsByByte = {
   0xbe: createSymbolObject("reinterpret/i32", "f32"),
   0xbf: createSymbolObject("reinterpret/i64", "f64"),
 
+  // bulk memory
+  0xfc0a: createSymbol("memory.copy"),
+
   // Atomic Memory Instructions
   0xfe00: createSymbol("memory.atomic.notify", 1),
   0xfe01: createSymbol("memory.atomic.wait32", 1),

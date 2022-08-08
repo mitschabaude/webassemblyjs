@@ -716,6 +716,10 @@ export function decode(ab: ArrayBuffer, opts: DecoderOpts): Program {
       let instructionByte = readByte();
       eatBytes(1);
 
+      if (instructionByte === 0xfc) {
+        instructionByte = 0xfc00 + readByte();
+        eatBytes(1);
+      }
       if (instructionByte === 0xfe) {
         instructionByte = 0xfe00 + readByte();
         eatBytes(1);
@@ -1033,6 +1037,24 @@ export function decode(ab: ArrayBuffer, opts: DecoderOpts): Program {
             // $FlowIgnore
             t.floatLiteral(value, valuef64.nan, valuef64.inf, String(value))
           );
+        }
+      } else if (instructionByte >= 0xfc00 && instructionByte <= 0xfcff) {
+        /**
+         * memory.copy
+         */
+        if (instruction.name === "memory.copy") {
+          let indexU32 = readU32();
+          let index = indexU32.value;
+          eatBytes(indexU32.nextIndex);
+          if (index !== 0) {
+            throw new Error("zero flag expected");
+          }
+          indexU32 = readU32();
+          index = indexU32.value;
+          eatBytes(indexU32.nextIndex);
+          if (index !== 0) {
+            throw new Error("zero flag expected");
+          }
         }
       } else if (instructionByte >= 0xfe00 && instructionByte <= 0xfeff) {
         /**
